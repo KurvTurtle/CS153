@@ -350,7 +350,7 @@ int waitpid (int pid, int* status, int options){
     // Scan through table looking for zombie children.
     procexists = 0;
     for(p = ptable.proc; p < &ptable.proc[NPROC]; p++){
-      //if(p->parent != proc)
+      //if(p->parent != curproc)
       if(p->pid != pid)
         continue;
       procexists = 1;

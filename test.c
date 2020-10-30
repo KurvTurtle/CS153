@@ -11,18 +11,18 @@ int main(int argc, char *argv[]) {
 
     printf(1, "\n This program tests the correctness of your lab#1\n");
 
-    if (atoi(argv[1]) == 1)
+    //if (atoi(argv[1]) == 1)
         exitWait();
-    else if (atoi(argv[1]) == 2)
+    /*else if (atoi(argv[1]) == 2)
         waitPid();
     else if (atoi(argv[1]) == 3)
         CELEBW02();
-    else
+    else*/
         printf(1, "\ntype \"lab1 1\" to test exit and wait, \"lab1 2\" to test waitpid and \"lab1 3\" to test the extra credit WNOHANG option \n");
 
     // End of test
-     exit(0);
-     return 0;
+    exitS(0);
+    return 0;
 }
 
 int exitWait(void) {

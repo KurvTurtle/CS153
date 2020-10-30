@@ -7,15 +7,11 @@
 
 #define N  1000
 
-void
-printf(int fd, const char *s, ...)
-{
+void printf(int fd, const char *s, ...) {
   write(fd, s, strlen(s));
 }
 
-void
-forktest(void)
-{
+void forktest(void) {
   int n, pid;
 
   printf(1, "fork test\n");
@@ -34,13 +30,13 @@ forktest(void)
   }
 
   for(; n > 0; n--){
-    if(wait() < 0){
+    if(wait(0) < 0){
       printf(1, "wait stopped early\n");
       exit();
     }
   }
 
-  if(wait() != -1){
+  if(wait(0) != -1){
     printf(1, "wait got too many\n");
     exit();
   }
@@ -48,9 +44,7 @@ forktest(void)
   printf(1, "fork test OK\n");
 }
 
-int
-main(void)
-{
+int main(void) {
   forktest();
   exit();
 }
